@@ -237,7 +237,7 @@ class SSNE:
                 print("Fitness before: ", test_score_p)
                 print("Fitness after: ", test_score_c)
 
-    def safe_mutate(self, gene: GeneticAgent, mag):
+    def proximal_mutate(self, gene: GeneticAgent, mag):
         trials = 5
         if self.stats.should_log():
             test_score_p = 0
@@ -410,8 +410,8 @@ class SSNE:
         for i in range(self.population_size):
             if i not in new_elitists:  # Spare the new elitists
                 if random.random() < self.args.mutation_prob:
-                    if self.args.safe_mut:
-                        self.safe_mutate(pop[i], mag=self.args.mutation_mag)
+                    if self.args.proximal_mut:
+                        self.proximal_mutate(pop[i], mag=self.args.mutation_mag)
                     else:
                         self.mutate_inplace(pop[i])
 

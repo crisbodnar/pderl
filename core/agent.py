@@ -29,9 +29,7 @@ class Agent:
         else:
             self.replay_buffer = replay_memory.ReplayMemory(args.buffer_size, args.device)
 
-        self.demo_buffer = replay_memory.ReplayMemory(args.imit_buffer_size, args.device)
         self.ounoise = ddpg.OUNoise(args.action_dim)
-
         self.evolver = utils_ne.SSNE(self.args, self.rl_agent.critic, self.evaluate)
 
         # Population novelty

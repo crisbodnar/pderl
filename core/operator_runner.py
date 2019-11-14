@@ -122,7 +122,7 @@ class OperatorRunner:
 
             dchild = ddpg.GeneticAgent(self.args)
             ssne.clone(agent, dchild)
-            ssne.safe_mutate(dchild, 0.05)
+            ssne.proximal_mutate(dchild, 0.05)
             sm_reward, sm_states = self.evaluate(dchild)
             smr.append(sm_reward)
             sms.append(sm_states)
@@ -139,7 +139,7 @@ class OperatorRunner:
         for mag in ablation_mag:
             dchild = ddpg.GeneticAgent(self.args)
             ssne.clone(agent, dchild)
-            ssne.safe_mutate(dchild, mag)
+            ssne.proximal_mutate(dchild, mag)
 
             sm_reward, sm_states = self.evaluate(dchild)
             ablr.append(sm_reward)

@@ -21,7 +21,7 @@ Use the following to cite:
 #### To Run PDERL #### 
 
 First, you will have to install all the dependencies by running ```pip install -r requirements.txt```.
-Additionally, for installing mujoco-py 2.0.2.2, follow the instructions on the [official webpage](https://github.com/openai/mujoco-py.). 
+Additionally, for installing mujoco-py 2.0.2.2, follow the instructions on the [official github](https://github.com/openai/mujoco-py). 
 
 To run PDERL with proximal mutations and distillation-based crossover use:
 

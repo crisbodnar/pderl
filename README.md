@@ -6,7 +6,7 @@ Official code for the AAAI 2020 paper "Proximal Distilled Evolutionary Reinforce
 #### To Run PDERL #### 
 
 First, you will have to install all the dependencies by running ```pip install -r requirements.txt```.
-For installing MuJoCo, follow the instructions on the [official webpage](https://github.com/openai/mujoco-py.). 
+Additionally, for installing mujoco-py 2.0.2.2, follow the instructions on the [official webpage](https://github.com/openai/mujoco-py.). 
 
 To run PDERL with proximal mutations and distillation-based crossover use:
 

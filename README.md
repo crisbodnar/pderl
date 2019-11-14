@@ -1,4 +1,7 @@
 # Proximal Distilled Evolutionary Reinforcement Learning
+
+[![Build Status](https://travis-ci.com/crisbodnar/pderl.svg?branch=master)](https://travis-ci.com/crisbodnar/pderl)
+
 Official code for the AAAI 2020 paper "Proximal Distilled Evolutionary Reinforcement Learning". 
 
 ![PDERL](figures/pderl_gif.gif) 

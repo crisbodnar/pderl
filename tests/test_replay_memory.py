@@ -1,4 +1,5 @@
 from core.replay_memory import ReplayMemory, Transition
+import numpy as np
 
 
 def test_get_latest():
@@ -92,7 +93,30 @@ def test_add_latest_from():
     assert (len(mem2) == 1000)
     for i, trans in enumerate(latest[-1000:]):
         assert (trans.state == mem2.memory[i].state)
-        assert (trans.state == mem2.memory[i].action)
+        assert (trans.action == mem2.memory[i].action)
+
+
+def test_shuffle():
+    mem = ReplayMemory(2150, "cpu")
+
+    for i in range(1300):
+        transition = Transition(i, 'New', None, None, None)
+        mem.add(*transition)
+
+    mem.shuffle()
+    returned_latest = mem.get_latest(1300)
+
+    shuffled_states = []
+    for i, trans in enumerate(returned_latest):
+        shuffled_states.append(returned_latest[i].state[0][0])
+
+    ordered_states = np.sort(shuffled_states)
+
+    # Check the shuffled list is different
+    assert (list(np.arange(1300)) != shuffled_states)
+
+    # Check the ordered shuffled list is the same
+    assert (list(np.arange(1300)) == list(ordered_states))
 
 
 def test_add_content_of():
@@ -103,8 +127,9 @@ def test_add_content_of():
     for i in range(2000):
         transition = Transition(i, 'New', None, None, None)
         latest.append(transition)
-        other.push(transition)
+        other.add(*transition)
 
     mem.add_content_of(other)
-    latest_now = mem.get_latest(1560)
-    assert (latest_now == latest[-1560:])
+
+    for i, trans in enumerate(latest[-1560:]):
+        assert (trans.state == mem.memory[i].state)

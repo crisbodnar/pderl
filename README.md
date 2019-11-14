@@ -1,25 +1,28 @@
 # Proximal Distilled Evolutionary Reinforcement Learning
-Code for the dissertation "Learning-Based Genetic Operators for Reinforcement Learning"
+Official code for the AAAI 2020 paper "Proximal Distilled Evolutionary Reinforcement Learning". 
 
 ###### Dependencies #######
-Python 3.6 \
-Pytorch 1.0 \
-Numpy 1.15.2 \
-Fastrand 1.0 \
-Gym 0.12.1 \
-Mujoco-py v2.2.0.2 (Requires a license)
 
+To install all the dependencies run ```pip install -r requirements.txt```
+and follow the instructions (https://github.com/openai/mujoco-py) for installing MuJoCo. 
 
 #### To Run PDERL #### 
-python run_erl.py -env $ENV_NAME$ -distil -safe_mut -mut_mag=0.1 -logidr=$LOG_DIR$
+To run PDERL with proximal mutations and distillation-based crossover use:
+
+```bash
+python run_pderl.py -env $ENV_NAME$ -distil -proximal_mut -mut_mag=$MUT_MAG$ -logidr=$LOG_DIR$ -seed=$SEED$
+```
 
 #### ENVS TESTED #### 
+
 'Hopper-v2' \
 'HalfCheetah-v2' \
 'Swimmer-v2' \
 'Ant-v2' \
 'Walker2d-v2' 
 
-#### Plots ####
+#### CREDITS ####
 
-To visualise the plots used in the disseration, run the Jupyter Notebooks from the visualise directory.
+Our code is largely based on the code of Khadka and Tumer (https://github.com/ShawK91/erl_paper_nips18) and we would 
+like to thank them for making their code publicly available. The proximal mutations code is also relying on 
+the safe mutations code of Lehman et al. from Uber Research (https://github.com/uber-research/safemutations).

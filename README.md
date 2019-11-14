@@ -3,6 +3,18 @@ Official code for the AAAI 2020 paper "Proximal Distilled Evolutionary Reinforce
 
 ![PDERL](figures/pderl_gif.gif) 
 
+Use the following to cite:
+
+```
+@article{Bodnar2019ProximalDE,
+  title={Proximal Distilled Evolutionary Reinforcement Learning},
+  author={Cristian Bodnar and Ben Day and Pietro Lio'},
+  journal={ArXiv},
+  year={2019},
+  volume={abs/1906.09807}
+}
+```
+
 #### To Run PDERL #### 
 
 First, you will have to install all the dependencies by running ```pip install -r requirements.txt```.

@@ -238,6 +238,7 @@ class SSNE:
                 print("Fitness after: ", test_score_c)
 
     def proximal_mutate(self, gene: GeneticAgent, mag):
+        # Based on code from https://github.com/uber-research/safemutations 
         trials = 5
         if self.stats.should_log():
             test_score_p = 0

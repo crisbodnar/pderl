@@ -3,7 +3,7 @@ R_ERL/
 */__pycache__/
 *.pyc
 .cache/
-.pytest_cache/
+*.pytest_cache/
 MUJOCO_LOG.TXT
 *pkl
 *evo_net

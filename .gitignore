@@ -1,0 +1,11 @@
+R_ERL/
+.idea/
+*/__pycache__/
+*.pyc
+.cache/
+.pytest_cache/
+MUJOCO_LOG.TXT
+*pkl
+*evo_net
+*.DS_Store
+*.pdf

@@ -26,7 +26,7 @@ Additionally, for installing mujoco-py 2.0.2.2, follow the instructions on the [
 To run PDERL with proximal mutations and distillation-based crossover use:
 
 ```bash
-python run_pderl.py -env=$ENV_NAME$ -distil -proximal_mut -mut_mag=$MUT_MAG$ -logidr=$LOG_DIR$
+python run_pderl.py -env=$ENV_NAME$ -distil -proximal_mut -mut_mag=$MUT_MAG$ -logdir=$LOG_DIR$
 ```
 
 To evaluate and visualise a trained model in an environment use:

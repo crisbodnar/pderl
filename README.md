@@ -1,8 +1,7 @@
 # Proximal Distilled Evolutionary Reinforcement Learning
 Official code for the AAAI 2020 paper "Proximal Distilled Evolutionary Reinforcement Learning". 
 
-![Distillation crossover](figures/distil_crossover.png){:height="45%" width="45%"} ![Proximal Mutation](figures/proximal_mutation.png){:height="45%" width="45%"}
-
+![PDERL](figures/pderl_gif.gif) 
 
 #### To Run PDERL #### 
 

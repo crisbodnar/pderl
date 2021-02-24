@@ -9,12 +9,14 @@ Official code for the AAAI 2020 paper "Proximal Distilled Evolutionary Reinforce
 Use the following to cite:
 
 ```
-@article{Bodnar2019ProximalDE,
-  title={Proximal Distilled Evolutionary Reinforcement Learning},
-  author={Cristian Bodnar and Ben Day and Pietro Lio'},
-  journal={ArXiv},
-  year={2019},
-  volume={abs/1906.09807}
+@inproceedings{bodnar2020proximal,
+  title={Proximal distilled evolutionary reinforcement learning},
+  author={Bodnar, Cristian and Day, Ben and Li{\'o}, Pietro},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={34},
+  number={04},
+  pages={3283--3290},
+  year={2020}
 }
 ```
 

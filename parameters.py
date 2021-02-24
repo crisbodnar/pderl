@@ -101,6 +101,7 @@ class Parameters:
         # Variation operator statistics
         self.opstat = cla.opstat
         self.opstat_freq = cla.opstat_freq
+        self.test_operators = cla.test_operators
 
         # Save Results
         self.state_dim = None  # To be initialised externally

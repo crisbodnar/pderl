@@ -16,17 +16,19 @@ parser.add_argument('-sync_period', help="How often to sync to population", type
 parser.add_argument('-novelty', help='Use novelty exploration', action='store_true')
 parser.add_argument('-proximal_mut', help='Use safe mutation', action='store_true')
 parser.add_argument('-distil', help='Use distilation crossover', action='store_true')
-parser.add_argument('-distil_type', help='Use distilation crossover', type=str, default='fitness')
+parser.add_argument('-distil_type', help='Use distilation crossover. Choices: (fitness) (distance)',
+                    type=str, default='fitness')
 parser.add_argument('-per', help='Use Prioritised Experience Replay', action='store_true')
 parser.add_argument('-mut_mag', help='The magnitude of the mutation', type=float, default=0.05)
 parser.add_argument('-mut_noise', help='Use a random mutation magnitude', action='store_true')
 parser.add_argument('-verbose_mut', help='Make mutations verbose', action='store_true')
-parser.add_argument('-verbose_crossover', help='Make crossovers verbose', action='store_trueF')
+parser.add_argument('-verbose_crossover', help='Make crossovers verbose', action='store_true')
 parser.add_argument('-logdir', help='Folder where to save results', type=str, required=True)
 parser.add_argument('-opstat', help='Store statistics for the variation operators', action='store_true')
 parser.add_argument('-opstat_freq', help='Frequency (in generations) to store operator statistics', type=int, default=1)
 parser.add_argument('-save_periodic', help='Save actor, critic and memory periodically', action='store_true')
 parser.add_argument('-next_save', help='Generation save frequency for save_periodic', type=int, default=200)
+parser.add_argument('-test_operators', help='Runs the operator runner to test the operators', action='store_true')
 ROOT_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
@@ -48,9 +50,12 @@ if __name__ == "__main__":
 
     # Seed
     env.seed(parameters.seed)
-    torch.manual_seed(parameters.seed); np.random.seed(parameters.seed); random.seed(parameters.seed)
+    torch.manual_seed(parameters.seed)
+    np.random.seed(parameters.seed)
+    random.seed(parameters.seed)
 
-    if parameters.test:
+    # Tests the variation operators after that is saved first with -save_periodic
+    if parameters.test_operators:
         operator_runner = OperatorRunner(parameters, env)
         operator_runner.run()
         exit()
